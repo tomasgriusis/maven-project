@@ -31,13 +31,13 @@ pipeline {
 			parallel{
 				stage('Deploy to Staging'){
 					steps {
-						sh "scp -i **/target/*.war /opt/tomcat/webapps"
+						sh "cp -i **/target/*.war /opt/tomcat/webapps"
 					}
 				}
 		
 				stage('Deploy to Production'){
 					steps {
-						sh "scp -i **/target/*.war /opt/tomcat-prod/webapps"
+						sh "cp -i **/target/*.war /opt/tomcat-prod/webapps"
 					}
 				}
 			}	
