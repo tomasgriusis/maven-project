@@ -35,13 +35,13 @@ pipeline {
 			parallel{
 				stage('Deploy to Staging'){
 					steps {
-						sh "cp -i **/target/*.war /opt/tomcat/webapps"
+						sh "cp -i -v **/target/*.war /opt/tomcat/webapps"
 					}
 				}
 		
 				stage('Deploy to Production'){
 					steps {
-						sh "cp -i **/target/*.war /opt/tomcat-prod/webapps"
+						sh "cp -i -v **/target/*.war /opt/tomcat-prod/webapps"
 					}
 				}
 			}	
